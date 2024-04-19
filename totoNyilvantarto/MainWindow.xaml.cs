@@ -18,6 +18,7 @@ using System.Collections;
 
 namespace totoNyilvantarto
 {
+    //git init
     /// <summary>
     /// A kulonbozo gombnyomasra es szovegbevitelre torteno funkciokat megvalosito metodusok osztalya
     /// </summary>
