@@ -1,0 +1,91 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="totoNyilvantarto.MainWindow"
+        Title="Totó kalkulátor és adatbázis" Height="660" Width="1000">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="565" Margin="502,41,0,0" VerticalAlignment="Top" Width="474">
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="134" Margin="34,420,0,0" VerticalAlignment="Top" Width="406"/>
+        </Border>
+
+
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="309" Margin="10,300,0,0" VerticalAlignment="Top" Width="434"/>
+        <Border BorderBrush="Black" BorderThickness="1" Height="222" Margin="10,41,556,0" VerticalAlignment="Top"/>
+        <Label x:Name="focim_label" Content="Odds-esély kalkulátor" HorizontalAlignment="Left" Height="38" Margin="24,10,0,0" VerticalAlignment="Top" Width="186" FontSize="17" FontWeight="Bold"/>
+        <TextBox x:Name="hazaiOdds" HorizontalAlignment="Left" Height="22" Margin="24,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" TextChanged="hazaiOdds_TextChanged"/>
+        <Label x:Name="label1" Content="Hazai odds:" HorizontalAlignment="Left" Height="25" Margin="24,48,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="label2" Content="Döntetlen odds:" HorizontalAlignment="Left" Height="25" Margin="24,105,0,0" VerticalAlignment="Top" Width="156"/>
+        <TextBox x:Name="dontetlenOdds" HorizontalAlignment="Left" Height="22" Margin="24,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" TextChanged="dontetlenOdds_TextChanged"/>
+        <Label x:Name="label3" Content="Vendég odds:" HorizontalAlignment="Left" Height="25" Margin="24,162,0,0" VerticalAlignment="Top" Width="156"/>
+        <TextBox x:Name="vendegOdds" HorizontalAlignment="Left" Height="22" Margin="24,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" TextChanged="vendegOdds_TextChanged"/>
+        <Label x:Name="hazaiEsely" Content="Hazai esély:" HorizontalAlignment="Left" Height="25" Margin="237,48,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="dontetlenEsely" Content="Döntetlen esély:" HorizontalAlignment="Left" Height="25" Margin="237,105,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="vendegEsely" Content="Vendég esély:" HorizontalAlignment="Left" Height="25" Margin="237,162,0,0" VerticalAlignment="Top" Width="156"/>
+        <Label x:Name="hazaiEsely_label" Content="-" HorizontalAlignment="Left" Height="26" Margin="237,76,0,0" VerticalAlignment="Top" Width="156" FontWeight="Bold"/>
+        <Label x:Name="dontetlenEsely_label" Content="-" HorizontalAlignment="Left" Height="24" Margin="237,134,0,0" VerticalAlignment="Top" Width="156" FontWeight="Bold"/>
+        <Label x:Name="vendegEsely_label" Content="-" HorizontalAlignment="Left" Height="26" Margin="237,190,0,0" VerticalAlignment="Top" Width="156" FontWeight="Bold"/>
+        <Button x:Name="szazalekSzamitas_button" Content="Százalékos esély számítása" HorizontalAlignment="Left" Height="23" Margin="102,231,0,0" VerticalAlignment="Top" Width="162" Click="szazalekSzamitas_button_Click"/>
+        <Label Content="Totó-adatbázis" HorizontalAlignment="Left" Height="34" Margin="24,266,0,0" VerticalAlignment="Top" Width="186" FontSize="17" FontWeight="Bold"/>
+        <Label x:Name="tippLabel" Content="1. Megjátszott hasábok száma:" HorizontalAlignment="Left" Height="29" Margin="24,309,0,0" VerticalAlignment="Top" Width="178"/>
+        <RadioButton x:Name="hasabSzam_is_one" Content="1" HorizontalAlignment="Left" Height="18" Margin="207,310,0,0" VerticalAlignment="Top" Width="28" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="hasabSzam_is_two" Content="2" HorizontalAlignment="Left" Height="18" Margin="240,310,0,0" VerticalAlignment="Top" Width="28" RenderTransformOrigin="-0.011,0.523" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="hasabSzam_is_three" Content="3" HorizontalAlignment="Left" Height="18" Margin="273,310,0,0" VerticalAlignment="Top" Width="28" RenderTransformOrigin="-0.011,0.523" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="hasabSzam_is_four" Content="4" HorizontalAlignment="Left" Height="18" Margin="306,310,0,0" VerticalAlignment="Top" Width="28" RenderTransformOrigin="-0.011,0.523" Checked="RadioButton_Checked"/>
+        <RadioButton x:Name="hasabSzam_is_five" Content="5" HorizontalAlignment="Left" Height="18" Margin="339,310,0,0" VerticalAlignment="Top" Width="28" RenderTransformOrigin="-0.011,0.523" Checked="RadioButton_Checked"/>
+        <Label x:Name="meccsekLabel" Content="2. Meccs megadása:" HorizontalAlignment="Left" Height="29" Margin="24,342,0,0" VerticalAlignment="Top" Width="119"/>
+        <TextBox x:Name="meccsNeve_box" HorizontalAlignment="Left" Height="22" Margin="148,346,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="219" IsEnabled="False"/>
+        <Label x:Name="label4" Content="3. Tippek megadása:" HorizontalAlignment="Left" Height="29" Margin="24,379,0,0" VerticalAlignment="Top" Width="119"/>
+        <ComboBox x:Name="hasab1_comboBox" HorizontalAlignment="Left" Height="23" Margin="148,382,0,0" VerticalAlignment="Top" Width="36" IsEnabled="False">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="2"/>
+        </ComboBox>
+        <ComboBox x:Name="hasab2_comboBox" HorizontalAlignment="Left" Height="23" Margin="189,382,0,0" VerticalAlignment="Top" Width="38" IsEnabled="False">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="2"/>
+        </ComboBox>
+        <ComboBox x:Name="hasab3_comboBox" HorizontalAlignment="Left" Height="23" Margin="232,382,0,0" VerticalAlignment="Top" Width="36" IsEnabled="False">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="2"/>
+        </ComboBox>
+        <ComboBox x:Name="hasab4_comboBox" HorizontalAlignment="Left" Height="23" Margin="273,382,0,0" VerticalAlignment="Top" Width="37" IsEnabled="False">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="2"/>
+        </ComboBox>
+        <ComboBox x:Name="hasab5_comboBox" HorizontalAlignment="Left" Height="23" Margin="315,382,0,0" VerticalAlignment="Top" Width="38" IsEnabled="False">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="X"/>
+            <ComboBoxItem Content="2"/>
+        </ComboBox>
+        <Button x:Name="meccsEsTippHozzaadasa" Content="Meccs és tipp hozzáadása" HorizontalAlignment="Left" Height="20" Margin="38,413,0,0" VerticalAlignment="Top" Width="366" Click="meccsEsTippHozzaadasa_Click"/>
+        <ListBox x:Name="meccsekListBox" HorizontalAlignment="Left" Height="129" Margin="24,441,0,0" VerticalAlignment="Top" Width="400" av:ItemsSource="{av:SampleData ItemCount=0}"/>
+        <Button x:Name="kiiratasButton" Content="Tippek mentése" HorizontalAlignment="Left" Height="20" Margin="41,579,0,0" VerticalAlignment="Top" Width="366" Click="kiiratasButton_Click"/>
+        <Label x:Name="label6" Content="Totó hasáb- és nyereményellenőr" HorizontalAlignment="Left" Height="34" Margin="521,10,0,0" VerticalAlignment="Top" Width="277" FontSize="17" FontWeight="Bold"/>
+        <TextBox x:Name="nyertesTippek_box" HorizontalAlignment="Left" Height="22" Margin="626,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220"/>
+        <Label x:Name="label5" Content="Add meg a nyertes tipposzlopot:" HorizontalAlignment="Left" Height="29" Margin="643,368,0,0" VerticalAlignment="Top" Width="186"/>
+        <Button x:Name="kereses_Button" Content="Találatok keresése" HorizontalAlignment="Left" Height="20" Margin="626,429,0,0" VerticalAlignment="Top" Width="220" Click="kereses_Button_Click"/>
+        <Button x:Name="button2" Content="Tippjeim betöltése" HorizontalAlignment="Left" Height="20" Margin="626,341,0,0" VerticalAlignment="Top" Width="220" Click="button2_Click"/>
+        <ListBox x:Name="sajatTippek_listBox" HorizontalAlignment="Left" Height="290" Margin="536,44,0,0" VerticalAlignment="Top" Width="400" av:ItemsSource="{av:SampleData ItemCount=14}"/>
+        <Label x:Name="elsoT" Content="1. hasáb:" HorizontalAlignment="Left" Height="29" Margin="596,462,0,0" VerticalAlignment="Top" Width="59"/>
+        <Label x:Name="masodikT" Content="2. hasáb:" HorizontalAlignment="Left" Height="29" Margin="596,488,0,0" VerticalAlignment="Top" Width="59"/>
+        <Label x:Name="harmadikT" Content="3. hasáb:" HorizontalAlignment="Left" Height="29" Margin="596,515,0,0" VerticalAlignment="Top" Width="59"/>
+        <Label x:Name="negyedikT" Content="4. hasáb:" HorizontalAlignment="Left" Height="29" Margin="596,541,0,0" VerticalAlignment="Top" Width="59"/>
+        <Label x:Name="otodikT" Content="5. hasáb:" HorizontalAlignment="Left" Height="29" Margin="596,570,0,0" VerticalAlignment="Top" Width="59"/>
+        <Label x:Name="label1_Copy" Content="created by Balázs Bence Zsolt" HorizontalAlignment="Left" Height="25" Margin="820,0,0,0" VerticalAlignment="Top" Width="170"/>
+        <Label x:Name="elsoT_Copy" Content="-" HorizontalAlignment="Left" Height="29" Margin="655,462,0,0" VerticalAlignment="Top" Width="90"/>
+        <Label x:Name="masodikT_Copy" Content="-" HorizontalAlignment="Left" Height="29" Margin="655,488,0,0" VerticalAlignment="Top" Width="94"/>
+        <Label x:Name="otodikT_Copy" Content="-" HorizontalAlignment="Left" Height="29" Margin="654,570,0,0" VerticalAlignment="Top" Width="94"/>
+        <Label x:Name="negyedikT_Copy" Content="-" HorizontalAlignment="Left" Height="29" Margin="654,541,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label x:Name="harmadikT_Copy" Content="-" HorizontalAlignment="Left" Height="29" Margin="655,515,0,0" VerticalAlignment="Top" Width="95"/>
+        <TextBlock x:Name="elsoTippek" HorizontalAlignment="Left" Height="29" Margin="748,467,0,0" VerticalAlignment="Top" Width="157" Visibility="Visible"/>
+        <TextBlock x:Name="masodikTippek" HorizontalAlignment="Left" Height="29" Margin="748,493,0,0" VerticalAlignment="Top" Width="180" Visibility="Visible"/>
+        <TextBlock x:Name="harmadikTippek" HorizontalAlignment="Left" Height="29" Margin="748,520,0,0" VerticalAlignment="Top" Width="180" Visibility="Visible"/>
+        <TextBlock x:Name="negyedikTippek" HorizontalAlignment="Left" Height="29" Margin="747,546,0,0" VerticalAlignment="Top" Width="181" Visibility="Visible"/>
+        <TextBlock x:Name="otodikTippek" HorizontalAlignment="Left" Height="30" Margin="748,574,0,0" VerticalAlignment="Top" Width="180" Visibility="Visible"/>
+
+
+    </Grid>
+</Window>
