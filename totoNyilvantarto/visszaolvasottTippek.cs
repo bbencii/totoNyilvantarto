@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace totoNyilvantarto
 {
+    /// <summary>
+    /// Itt tarolom a visszaolvasott tippek attributumait
+    /// <remarks>
+    /// Ennek segitsegevel kesobb letrehozok egy visszaolvasottTippek objektumokbol allo listat a visszaolvasott meccsek tarolasara
+    /// </remarks>>
+    /// </summary>
     internal class visszaolvasottTippek
     {
         public string vmeccsNev;

@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace totoNyilvantarto
 {
+    /// <summary>
+    /// Itt tarolom a tippek attributumait
+    /// <remarks>
+    /// Ennek segitsegevel kesobb letrehozok egy Tippek objektumokbol allo listat a meccsek tarolasara
+    /// </remarks>>
+    /// </summary>
     internal class Tippek
     {
         public string meccsNeve;
@@ -14,5 +20,9 @@ namespace totoNyilvantarto
         public string hasab3;
         public string hasab4;
         public string hasab5;
+    }
+
+    public class TippekClass
+    {
     }
 }
